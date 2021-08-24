@@ -1,6 +1,7 @@
 // 1. Use strict
 // added in ES 5
 // use this for Vanila Javascript.
+// 아래를 사용하면 let 과 같이 변수를 선언할 때 넣지 않으면 에러로 판단한다.
 'use strict';
 
 // 2. Variable, rw(read/write)
@@ -13,10 +14,12 @@ let globalName = 'global name';
   console.log(name);
   console.log(globalName);
 }
-console.log(name);
+// block scope
+// console.log(name); // 이 것은 에러가 난다.
 console.log(globalName);
 
 // var (don't ever use this!)
+// 변수 선언은 var를 쓰지 말고 let을 사용하자!
 // var hoisting (move declaration from bottom to top)
 // has no block scope
 {
@@ -25,14 +28,14 @@ console.log(globalName);
 }
 console.log(age);
 
-// 3. Constant, r(read only)
+// 3. Constant, r(read only), immutable 절대 바뀌지 않을 값을 선언할 때 쓰는 예약어
 // use const whenever possible.
 // only use let if variable needs to change.
 const daysInWeek = 7;
 const maxNumber = 5;
 
 // Note!
-// Immutable data types: premitive types, frozen objects (i.e. object.freeze())
+// Immutable data types: primitive types, frozen objects (i.e. object.freeze())
 // Mutable data types: all objects by default are mutable in JS
 // favor immutable data type always for a few reasons:
 //  - security
@@ -46,7 +49,7 @@ const maxNumber = 5;
 
 // number
 const count = 17; // integer
-const size = 17.1; // decimal number
+const size = 17.1; // decimal number 소수점 숫자
 console.log(`value: ${count}, type: ${typeof count}`);
 console.log(`value: ${size}, type: ${typeof size}`);
 
@@ -67,7 +70,7 @@ const char = 'c';
 const brendan = 'brendan';
 const greeting = 'hello ' + brendan;
 console.log(`value: ${greeting}, type: ${typeof greeting}`);
-const helloBob = `hi ${brendan}!`; //template literals (string)
+const helloBob = `hi ${brendan}!`; // template literals (string)
 console.log(`value: ${helloBob}, type: ${typeof helloBob}`);
 console.log('value: ' + helloBob + ' type: ' + typeof helloBob);
 
@@ -97,10 +100,14 @@ console.log(gSymbol1 === gSymbol2); // true
 console.log(`value: ${symbol1.description}, type: ${typeof symbol1}`);
 
 // object, real-life object, data structure
+// const 이기에 allie 객체를 다른 객체로 넣으면 안되지만 아래 예제와 같이 객체 안의 값을 변경할 때는 가능하다.
 const ellie = { name: 'ellie', age: 20 };
+console.log(`ellie ${ellie.age}`);
 ellie.age = 21;
+console.log(`ellie ${ellie.age}`);
 
 // 5. Dynamic typing: dynamically typed language
+// 그렇기 때문에 type script 로 개발하면 된다.
 let text = 'hello';
 console.log(text.charAt(0)); //h
 console.log(`value: ${text}, type: ${typeof text}`);
