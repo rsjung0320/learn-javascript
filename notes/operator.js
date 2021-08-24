@@ -1,7 +1,11 @@
-// 1. String concatenation
+// 1. String concatenation (연속)
 console.log('my' + ' cat');
 console.log('1' + 2);
-console.log(`string literals: 1 + 2 = ${1 + 2}`);
+console.log(`string literals: 1 + 2 =
+ 
+ 
+ '''
+ ${1 + 2}`); // single literal
 
 // 2. Numeric operators
 console.log(1 + 1); // add
@@ -45,6 +49,7 @@ const value1 = true;
 const value2 = 4 < 2;
 
 // || (or), finds the first truthy value
+// 이런 연산자를 사용할 때는 컴퓨팅 파워가 가장 적게 들어가는 것이 제일 처음에 와야 한다.
 console.log(`or: ${value1 || value2 || check()}`);
 
 // && (and), finds the first falsy value
@@ -53,6 +58,7 @@ console.log(`and: ${value1 && value2 && check()}`);
 // often used to compress long if-statement
 // nullableObject && nullableObject.something
 
+// 그냥 true 를 리턴하는 함수
 function check() {
   for (let i = 0; i < 10; i++) {
     //wasting time
@@ -73,6 +79,7 @@ console.log(stringFive == numberFive);
 console.log(stringFive != numberFive);
 
 // === strict equality, no type conversion
+// 이왕이면 무조건 === 으로 하자!
 console.log(stringFive === numberFive);
 console.log(stringFive !== numberFive);
 
