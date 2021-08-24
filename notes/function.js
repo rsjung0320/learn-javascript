@@ -37,6 +37,7 @@ function showMessage(message, from = 'unknown') {
 showMessage('Hi!');
 
 // 4. Rest parameters (added in ES6)
+// 배열 형태로 전달해야 한다.
 function printAll(...args) {
   for (let i = 0; i < args.length; i++) {
     console.log(args[i]);
@@ -48,7 +49,8 @@ function printAll(...args) {
 
   args.forEach((arg) => console.log(arg));
 }
-printAll('dream', 'coding', 'ellie');
+// 다른 타입도 받아준다.
+printAll('dream', 'coding', 'ellie', 'ㅅㄷㄴㅅ', 1);
 
 // 5. Local scope
 let globalMessage = 'global'; // global variable
@@ -96,8 +98,9 @@ function upgradeUser(user) {
 // 1. Function expression
 // a function declaration can be called earlier than it is defined. (hoisted)
 // a function expression is created when the execution reaches it.
+// 익명함수로 된 것은 hoisting 이 안된다. 그래서 함수 선언 위에서  print()를 하면 구동이 된다.
 const print = function () {
-  // anonymous function
+  // anonymous function 익명함수
   console.log('print');
 };
 print();
@@ -141,7 +144,7 @@ const simpleMultiply = (a, b) => {
   return a * b;
 };
 
-// IIFE: Immediately Invoked Function Expression
+// IIFE: Immediately Invoked (호출된) Function Expression
 (function hello() {
   console.log('IIFE');
 })();
