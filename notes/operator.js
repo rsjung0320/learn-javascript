@@ -1,3 +1,5 @@
+'use strict';
+
 // 1. String concatenation (연속)
 console.log('my' + ' cat');
 console.log('1' + 2);
