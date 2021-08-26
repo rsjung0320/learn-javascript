@@ -46,6 +46,7 @@ class UserStorage {
 }
 
 const userStorage = new UserStorage();
+// prompt 는 브라우져에서 유져로 부터 값을 input을 받을 수 있음
 const id = prompt('enter your id');
 const password = prompt('enter your passrod');
 userStorage.loginUser(
