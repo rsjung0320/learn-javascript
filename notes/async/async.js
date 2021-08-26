@@ -17,12 +17,12 @@ function delay(ms) {
 }
 
 async function getApple() {
-  await delay(2000);
+  await delay(1000);
   return '🍎';
 }
 
 async function getBanana() {
-  await delay(1000);
+  await delay(500);
   return '🍌';
 }
 
@@ -49,3 +49,14 @@ function pickOnlyOne() {
 }
 
 pickOnlyOne().then(console.log);
+
+// test
+
+async function test1() {
+  console.log('first');
+  await delay(1000);
+  console.log(`second`);
+  return 'hello world'
+}
+
+test1().then((value) => console.log(`third ${value}`));
