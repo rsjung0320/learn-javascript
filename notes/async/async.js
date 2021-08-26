@@ -60,3 +60,11 @@ async function test1() {
 }
 
 test1().then((value) => console.log(`third ${value}`));
+
+function test2(...abc) {
+  abc.forEach((value)=>console.log(value));
+
+
+}
+
+test2(['1'], ['2'], ['3'],'qwe');
