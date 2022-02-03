@@ -1,3 +1,5 @@
+// 참고 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
 // Spread Syntax - Object
 const item = { type: '👔', size: 'M' };
 const detail = { price: 20, made: 'Korea', gender: 'M' };
