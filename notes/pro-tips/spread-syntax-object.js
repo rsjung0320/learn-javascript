@@ -25,9 +25,11 @@ const newObject2 = {
 console.log(newObject);
 
 // ✅ Good Code ✨
+// 같은 값이 있다면 뒤에 있는 값으로 override 됨
 const shirt0 = Object.assign(item, detail);
 console.log(shirt0);
 
 // ✅ Better! Code ✨
+// 같은 값이 있다면 뒤에 있는 값으로 override 됨
 const shirt = { ...item, ...detail, price: 30 };
 console.log(shirt);

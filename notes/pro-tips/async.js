@@ -11,6 +11,7 @@ function displayUser() {
     });
 }
 
+// 2가지 이상의 promise 를 사용할 떄는 async/await를 사용하자.
 // ✅ Good Code ✨
 async function displayUser() {
   const user = await fetchUser();
