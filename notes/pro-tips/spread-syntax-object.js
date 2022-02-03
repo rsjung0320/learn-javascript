@@ -35,3 +35,21 @@ console.log(shirt0);
 // 같은 값이 있다면 뒤에 있는 값으로 override 됨
 const shirt = { ...item, ...detail, price: 30 };
 console.log(shirt);
+
+// 객체를 복사 할 떄는 앞에 {} 를 사용한다. 이유는 첫 번재 인자의 값이 변경되기 때문에 첫 번째 변수의 값이 변경 된다.
+const obj = { a: 1 };
+const copy = Object.assign({}, obj);
+console.log(copy); // { a: 1 }
+
+// assign 는 값만 복사한다.!
+let obj1 = { a: 0 , b: { c: 0}};
+let obj2 = Object.assign({}, obj1);
+console.log(JSON.stringify(obj2)); // { a: 0, b: { c: 0}}
+
+obj1.a = 1;
+console.log(JSON.stringify(obj1)); // { a: 1, b: { c: 0}}
+console.log(JSON.stringify(obj2)); // { a: 0, b: { c: 0}}
+
+obj2.a = 2;
+console.log(JSON.stringify(obj1)); // { a: 1, b: { c: 0}}
+console.log(JSON.stringify(obj2)); // { a: 2, b: { c: 0}}
